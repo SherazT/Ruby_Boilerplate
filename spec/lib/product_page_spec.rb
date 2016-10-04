@@ -1,32 +1,12 @@
 require_relative '../../lib/product_page'
 
 RSpec.describe ProductPage do
-  let(:clock) do
-    {
-      'product_type' => 'Clock',
-      'variants' => [
-        { 'price' => '1.10' },
-        { 'price' => '2.20' }
-      ]
-    }
-  end
 
   let(:watch) do
     {
       'product_type' => 'Watch',
       'variants' => [
         { 'price' => '3.30' }
-      ]
-    }
-  end
-
-  let(:pants) do
-    {
-      'product_type' => 'Pants',
-      'variants' => [
-        { 'price' => '1.25' },
-        { 'price' => '2.78' },
-        { 'price' => '3.32' }
       ]
     }
   end
@@ -45,20 +25,6 @@ RSpec.describe ProductPage do
       expect(pager.total_page_dollars).to eql(6.60)
     end
 
-
-    it 'returns 0 when there are no products' do
-      # Setup
-      data = {
-        'products' => [ ]
-      }
-
-      pager = ProductPage.new(data)
-
-      # Test
-      expect(pager.total_page_dollars).to eql(0.0)
-    end
-  end
-
   describe ".any?" do
     it 'is true when there are products' do
       # Setup
@@ -70,19 +36,5 @@ RSpec.describe ProductPage do
 
       expect(pager.any?).to eql(true)
     end
-
-    it 'is false when there are no products' do
-      # Setup
-      data = {
-        'products' => [ ]
-      }
-
-      pager = ProductPage.new(data)
-
-      # Test
-      expect(pager.any?).to eql(false)
-    end
-
   end
-
 end
