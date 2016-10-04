@@ -1,2 +1,3 @@
-# require_relative 'lib/product_fetcher'
+ require_relative 'lib/get_product'
 
+p GetProduct.new.total
