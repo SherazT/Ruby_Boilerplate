@@ -16,7 +16,7 @@ RSpec.describe ProductPage do
     it 'calculates total dollars for clocks and watches' do
       # setup
       data = {
-        'products' => [ clock, watch, pants ]
+        'products' => [ watch ]
       }
 
       pager = ProductPage.new(data)
@@ -29,7 +29,7 @@ RSpec.describe ProductPage do
     it 'is true when there are products' do
       # Setup
       data = {
-        'products' => [ clock, watch, pants ]
+        'products' => [ watch ]
       }
 
       pager = ProductPage.new(data)
